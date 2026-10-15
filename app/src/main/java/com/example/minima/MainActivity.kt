@@ -1,15 +1,20 @@
 package com.example.minima
 
-import android.app.Activity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tv = TextView(this)
-        tv.text = "Hello, Minima!"
-        tv.textSize = 24f
-        setContentView(tv)
+        
+        // ساخت یک نمای متنی ساده به صورت دستی (بدون نیاز به فایل XML در پوشه layout)
+        val textView = TextView(this).apply {
+            text = "Hello Minimal Android!"
+            textSize = 24f
+            setPadding(50, 50, 50, 50)
+        }
+        
+        setContentView(textView)
     }
 }
